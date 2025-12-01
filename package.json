@@ -1,0 +1,26 @@
+{
+  "name": "gamecenter",
+  "version": "1.0.1",
+  "description": "Game Center Application",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "python3": "^0.0.1",
+    "stylus": "^0.64.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "transform": {}
+  }
+}

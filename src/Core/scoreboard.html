@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Leaderboard</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the table to precisely match the desired template look */
+        .scoreboard-table th,
+        .scoreboard-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #374151;
+            /* Darker border */
+            white-space: nowrap;
+        }
+
+        .scoreboard-table th {
+            font-weight: 700;
+            color: #9ca3af;
+            /* Light gray for headers */
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            border-right: 1px solid #4b5563;
+        }
+
+        .scoreboard-table th:last-child {
+            border-right: none;
+        }
+
+        .scoreboard-table td {
+            color: #f3f4f6;
+        }
+
+        /* Enforce header alignment and padding to match the template visually */
+        #gameHeader {
+            text-align: left;
+            width: 25%;
+        }
+
+        #scoreHeader {
+            text-align: right;
+            width: 37.5%;
+            padding-right: 2rem;
+        }
+
+        #spsHeader {
+            text-align: right;
+            width: 37.5%;
+        }
+
+        /* Enforce data cell alignment */
+        .data-score {
+            text-align: right;
+            padding-right: 2rem;
+            font-family: monospace;
+        }
+
+        .data-sps {
+            text-align: right;
+            font-family: monospace;
+        }
+
+        .leaderboard-row {
+            transition: background-color 0.2s;
+        }
+
+        .leaderboard-row:nth-child(even) {
+            background-color: #1f2937;
+            /* Even row shade */
+        }
+
+        .leaderboard-row:hover {
+            background-color: #374151;
+            /* Hover effect */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen p-4 sm:p-8 font-sans text-gray-100 flex flex-col items-center">
+
+    <div class="max-w-4xl w-full">
+        <header class="text-center mb-10 mt-4">
+            <h1 class="text-4xl font-extrabold text-teal-400">Global Game Leaderboard</h1>
+            <p id="userIdDisplay" class="text-xs text-gray-500 mt-2">Loading User ID...</p>
+        </header>
+
+        <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-2xl border border-gray-700">
+            <!-- Loading Indicator -->
+            <div id="loading" class="flex items-center justify-center py-12 text-teal-400">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-teal-400" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                </svg>
+                Loading Scoreboard...
+            </div>
+
+            <!-- Table Container -->
+            <div id="scoreboardContainer" class="hidden overflow-x-auto">
+                <table class="scoreboard-table w-full border-collapse">
+                    <thead>
+                        <!-- --- MATCHING THE USER'S TEMPLATE EXACTLY --- -->
+                        <tr class="bg-gray-700 rounded-t-xl border-b border-gray-500">
+                            <th id="gameHeader" class="rounded-tl-xl">Game</th>
+                            <th id="scoreHeader">SCORE</th>
+                            <th id="spsHeader" class="rounded-tr-xl">SCORE PER SECOND</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scoreDataBody">
+                        <!-- Scores will be rendered here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // --- GLOBAL CONFIGURATION (MANDATORY) ---
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const authToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db = null;
+        let auth = null;
+        let currentUserId = null;
+        let useLocalStorage = Object.keys(firebaseConfig).length === 0; // Fallback to localStorage if Firebase not configured
+
+        // --- DOM Elements ---
+        const loadingElement = document.getElementById('loading');
+        const scoreboardContainer = document.getElementById('scoreboardContainer');
+        const scoreDataBody = document.getElementById('scoreDataBody');
+        const userIdDisplay = document.getElementById('userIdDisplay');
+
+        // Firestore Path for Public Leaderboard Data
+        const SCORE_COLLECTION_PATH = `artifacts/${appId}/public/data/highScores`;
+
+        // Conditionally import Firebase only if configured
+        if (!useLocalStorage) {
+            try {
+                const { initializeApp } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js");
+                const { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js");
+                const { getFirestore, collection, addDoc, onSnapshot, query, serverTimestamp, setLogLevel } = await import("https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js");
+
+                // Enable debug logging for Firebase
+                setLogLevel('debug');
+
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+            } catch (e) {
+                console.error("Firebase import failed, falling back to localStorage:", e);
+                useLocalStorage = true;
+            }
+        }
+
+        /**
+         * Parses URL query parameters into an object.
+         */
+        function getNewScoreData() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            for (const [key, value] of urlParams.entries()) {
+                params[key] = decodeURIComponent(value);
+            }
+
+            const score = parseFloat(params.score);
+            const sps = parseFloat(params.sps);
+
+            // Return data only if both core metrics are valid numbers and game name exists
+            if (params.game && !isNaN(score) && !isNaN(sps)) {
+                return {
+                    game: params.game,
+                    score: score,
+                    sps: sps
+                };
+            }
+            return null; // No valid new score data found
+        }
+
+        /**
+         * Saves a new score to Firestore or localStorage.
+         * @param {Object} scoreData The score data object (game, score, sps).
+         */
+        async function saveNewScore(scoreData) {
+            if (useLocalStorage) {
+                // Fallback to localStorage
+                const scores = JSON.parse(localStorage.getItem('gameScores') || '[]');
+                const newScore = {
+                    id: Date.now().toString(),
+                    game: scoreData.game,
+                    score: scoreData.score,
+                    sps: scoreData.sps,
+                    userId: currentUserId || 'anonymous',
+                    timestamp: new Date().toISOString()
+                };
+                scores.push(newScore);
+                localStorage.setItem('gameScores', JSON.stringify(scores));
+                console.log("New score saved to localStorage with ID: ", newScore.id);
+                return;
+            }
+
+            if (!db || !currentUserId) {
+                console.error("Firestore not initialized or user not authenticated.");
+                return;
+            }
+
+            try {
+                const docRef = await addDoc(collection(db, SCORE_COLLECTION_PATH), {
+                    game: scoreData.game,
+                    score: scoreData.score,
+                    sps: scoreData.sps,
+                    userId: currentUserId,
+                    timestamp: serverTimestamp() // Use server timestamp for ordering
+                });
+                console.log("New score successfully saved with ID: ", docRef.id);
+
+                // Note: The history state clearing is commented out to allow for manual testing/refresh.
+                // If this were a deployed app, you might clear it:
+                // history.replaceState({}, document.title, window.location.pathname);
+
+            } catch (e) {
+                console.error("Error saving score to Firestore: ", e);
+            }
+        }
+
+        /**
+         * Fetches and listens for real-time updates to all high scores.
+         */
+        function listenForScores() {
+            if (useLocalStorage) {
+                // Load from localStorage
+                const scores = JSON.parse(localStorage.getItem('gameScores') || '[]');
+                // Sort scores by score descending, then by timestamp descending
+                scores.sort((a, b) => {
+                    if (b.score !== a.score) {
+                        return b.score - a.score;
+                    }
+                    const timeA = new Date(a.timestamp).getTime();
+                    const timeB = new Date(b.timestamp).getTime();
+                    return timeB - timeA;
+                });
+                renderScoreboard(scores);
+                return;
+            }
+
+            if (!db) {
+                console.error("Firestore not initialized.");
+                return;
+            }
+
+            // Note: We avoid orderBy() in Firestore queries as it often requires indexes
+            // not automatically created in this environment. We will fetch all data and sort in JavaScript.
+            const scoresQuery = query(collection(db, SCORE_COLLECTION_PATH));
+
+            // onSnapshot provides real-time updates
+            onSnapshot(scoresQuery, (snapshot) => {
+                const scores = [];
+                snapshot.forEach((doc) => {
+                    scores.push({ id: doc.id, ...doc.data() });
+                });
+
+                // Sort scores by score descending, then by timestamp descending
+                scores.sort((a, b) => {
+                    if (b.score !== a.score) {
+                        return b.score - a.score;
+                    }
+                    // Handle serverTimestamp potentially being null for brand new documents
+                    const timeA = a.timestamp?.toMillis() || 0;
+                    const timeB = b.timestamp?.toMillis() || 0;
+                    return timeB - timeA;
+                });
+
+                renderScoreboard(scores);
+            }, (error) => {
+                console.error("Error fetching scores: ", error);
+                renderScoreboard([]); // Render empty if error
+            });
+        }
+
+        /**
+         * Renders the fetched score data into the table.
+         * @param {Array<Object>} scores The array of score documents.
+         */
+        function renderScoreboard(scores) {
+            // Hide loading spinner and show table
+            loadingElement.classList.add('hidden');
+            scoreboardContainer.classList.remove('hidden');
+
+            scoreDataBody.innerHTML = '';
+
+            if (scores.length === 0) {
+                scoreDataBody.innerHTML = `
+                    <tr>
+                        <td colspan="3" class="text-center text-gray-500 py-6">
+                            No high scores recorded yet. Play a game!
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            scores.forEach((data, index) => {
+                const gameName = data.game || 'N/A';
+                const score = parseFloat(data.score);
+                const sps = parseFloat(data.sps);
+
+                const formattedScore = isNaN(score) ? 'N/A' : score.toLocaleString('en-US', { maximumFractionDigits: 0 });
+                const formattedSPS = isNaN(sps) ? 'N/A' : sps.toFixed(2);
+
+                const newRow = document.createElement('tr');
+                newRow.className = 'leaderboard-row';
+
+                // Highlight the row if the user owns this score
+                if (data.userId === currentUserId) {
+                    newRow.classList.add('bg-yellow-900/40', 'border-l-4', 'border-yellow-400');
+                }
+
+                newRow.innerHTML = `
+                    <td class="font-semibold ${data.userId === currentUserId ? 'text-yellow-300' : 'text-teal-300'}">${index + 1}. ${gameName}</td>
+                    <td class="data-score">${formattedScore}</td>
+                    <td class="data-sps">${formattedSPS}</td>
+                `;
+                scoreDataBody.appendChild(newRow);
+            });
+        }
+
+        /**
+         * Initializes Firebase and authenticates the user.
+         */
+        async function initializeAppAndAuth() {
+            if (useLocalStorage) {
+                // Use localStorage mode
+                currentUserId = 'anonymous';
+                userIdDisplay.textContent = `User ID: ${currentUserId} (Local Storage)`;
+
+                // Process data
+                const newScoreData = getNewScoreData();
+                if (newScoreData) {
+                    await saveNewScore(newScoreData);
+                }
+
+                // Start listening for scores
+                listenForScores();
+                return;
+            }
+
+            try {
+                // 1. Authenticate user
+                if (authToken) {
+                    await signInWithCustomToken(auth, authToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                // 2. Wait for auth state change to get the final user ID
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        currentUserId = user.uid;
+                        userIdDisplay.textContent = `User ID: ${currentUserId}`;
+
+                        // 3. Process data only after auth is confirmed
+                        const newScoreData = getNewScoreData();
+                        if (newScoreData) {
+                            // If a score is in the URL, save it first
+                            saveNewScore(newScoreData);
+                        }
+
+                        // 4. Start listening for the complete scoreboard data
+                        listenForScores();
+
+                    } else {
+                        console.log("Authentication failed or user signed out.");
+                        currentUserId = 'anonymous';
+                        userIdDisplay.textContent = `User ID: ${currentUserId} (Anonymous)`;
+                        listenForScores(); // Listen anyway, but use anonymous ID
+                    }
+                });
+
+            } catch (e) {
+                console.error("Firebase Initialization Error:", e);
+                loadingElement.textContent = "Error loading scoreboard. Check console for details.";
+                scoreboardContainer.classList.add('hidden');
+                loadingElement.classList.remove('hidden');
+            }
+        }
+
+        // Start the application initialization
+        initializeAppAndAuth();
+
+    </script>
+</body>
+
+</html>
