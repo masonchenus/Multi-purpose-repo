@@ -10,8 +10,12 @@ This is the Game Center Application, a web-based app that supports game center a
 
 ## Installation
 
-1. Clone the repository.
-2. Run `npm install` to install dependencies.
+1. Clone the repository using the following terminal command:
+   <br>
+   `
+   git clone https://github.com/masonchenus/iGame-center.git
+   `
+3. Run `npm install` to install dependencies.
 
 ## Usage
 
