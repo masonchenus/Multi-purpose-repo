@@ -1891,184 +1891,6 @@
         .chaos-pixelate {
             animation: chaosPixelate 0.4s steps(5)
         }
-        doomsday {
-            0% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-                opacity: 1;
-            }
-            5% {
-                transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--rot, 0deg)) scale(1);
-                opacity: 1;
-                filter: blur(4592678), 
-                hue-rotate(360deg), 
-                saturate(666),
-                sepia(100);
-            }
-            10% {
-                transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px), 
-                hue-rotate(0deg), 
-                saturate(100),
-                sepia(0),
-                translate(999,999,999),
-                translate(-999,-999,-999),
-                translate(0,0,0);
-            }
-            15% {
-                transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px), 
-                hue-rotate(0deg), 
-                saturate(100),
-                sepia(5423867904358967245387692435876245387643589764357865439985743),
-                brightness(infinity),
-                brightness(1);
-            }
-            20% {
-                transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8); 
-                opacity: 0; 
-                filter: blur(0px), 
-                hue-rotate(0deg), 
-                saturate(100),
-                sepia(infinity),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg)
-            }
-            25% {
-                transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(infinity),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1e+10),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                blur(infinity)
-                opacity(-1)
-                opacity(1)
-                opacity(-infinity)
-                opacity(1)
-            }
-            30% {
-                transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8); 
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(infinity),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(infinity)
-            }
-            35% {
-                transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(infinity),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                hue-rotate(-1)
-            }
-            40% {
-                transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(infinity),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796)
-                blur(blur(9223372036854775807px))
-        }
-        45% {
-            transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(infinity),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796)
-    }
-    50% {
-        transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(infinity),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796)
-    }
-    70% {
-        transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(222),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796)
-    }
-    99% {
-        transform: translate(var(--targetX, 0px), var(--targetY, 100vh)) rotate(calc(var(--rot, 0deg) * 2)) scale(0.8);
-                opacity: 0;
-                filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(222),
-                brightness(0),
-                brightness(infinity),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796)
-    }
-    100% {
-        opacity: 1;
-        filter: blur(0px),
-                hue-rotate(0deg),
-                saturate(100),
-                sepia(222),
-                brightness(0),
-                brightness(1),
-                hue-rotate(999245796853429768234567892354678924356978324deg),
-                saturate(1000000000000000),
-                hue-rotate(999245796)
-    }
-}
 
         @keyframes chaosPixelate {
 
@@ -2773,11 +2595,158 @@
                 transform: rotate(360deg);
             }
         }
+
+        .gamertagModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .gamertagModal.active {
+            display: flex;
+        }
+
+        .gamertagModal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .gamertagModal-content h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .gamertagModal-content p {
+            margin: 0 0 25px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .gamertagModal-content input {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .gamertagModal-content input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .gamertagModal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .gamertagModal-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .gamertagModal-btn.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex: 1;
+        }
+
+        .gamertagModal-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .gamertagModal-btn.secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .gamertagModal-btn.secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .gamertagDisplay {
+            position: fixed;
+            top: 12px;
+            right: 120px;
+            z-index: 9998;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .gamertagDisplay:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .gamertagDisplay.empty {
+            display: none;
+        }
     </style>
 
 </head>
 
 <body>
+    <!-- Gamertag Modal -->
+    <div class="gamertagModal" id="gamertagModal">
+        <div class="gamertagModal-content">
+            <h2>👾 Welcome</h2>
+            <p>Enter your gamertag to get started</p>
+            <input type="text" id="gamertagInput" placeholder="Enter your gamertag..." maxlength="20" />
+            <div class="gamertagModal-buttons">
+                <button class="gamertagModal-btn secondary" id="gamertagSkip">Skip</button>
+                <button class="gamertagModal-btn primary" id="gamertagConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gamertag Display -->
+    <div class="gamertagDisplay empty" id="gamertagDisplay"></div>
+
     <button id="epilepsyToggle" class="epilepsyBtn" title="Toggle epilepsy background">⚠️ Epilepsy</button>
     <!-- Global Settings Button -->
     <button id="settingsBtn" class="settingsBtn" title="Open settings">⚙ Settings</button>
@@ -11170,7 +11139,7 @@
                     height: 25,
                     speedMultiplier: 1.52625672519242587,
                     healthMultiplier: 1.5,
-                    fireRate: 2,
+                    fireRate: 20,
                     damage: Math.random() * 100 + 50
                 }
             };
@@ -16419,7 +16388,85 @@
         function goToCalculator() {
             window.location.href = "src/core/calculator.html"
         }
-        </script>
+        function goToWorkshop() {
+            window.location.href = "src/core/workshop.html"
+        }
+    </script>
+
+    <script>
+        (function initGamertagSystem() {
+            const modal = document.getElementById('gamertagModal');
+            const input = document.getElementById('gamertagInput');
+            const confirmBtn = document.getElementById('gamertagConfirm');
+            const skipBtn = document.getElementById('gamertagSkip');
+            const display = document.getElementById('gamertagDisplay');
+            const STORAGE_KEY = 'gamercenter_gamertag';
+            const MODAL_SHOWN_KEY = 'gamercenter_modal_shown';
+
+            function updateDisplay(tag) {
+                if (tag && tag.trim()) {
+                    display.textContent = `👤 ${tag}`;
+                    display.classList.remove('empty');
+                    localStorage.setItem(STORAGE_KEY, tag);
+                } else {
+                    display.textContent = '';
+                    display.classList.add('empty');
+                    localStorage.removeItem(STORAGE_KEY);
+                }
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                localStorage.setItem(MODAL_SHOWN_KEY, '1');
+            }
+
+            function saveAndClose() {
+                const tag = input.value.trim();
+                if (tag.length > 0) {
+                    updateDisplay(tag);
+                    closeModal();
+                } else {
+                    input.style.borderColor = '#ff6b6b';
+                    setTimeout(() => {
+                        input.style.borderColor = '#ddd';
+                    }, 500);
+                }
+            }
+
+            function showModal() {
+                modal.classList.add('active');
+                input.focus();
+            }
+
+            confirmBtn.addEventListener('click', saveAndClose);
+            skipBtn.addEventListener('click', closeModal);
+
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') saveAndClose();
+            });
+
+            display.addEventListener('click', () => {
+                input.value = display.textContent.replace('👤 ', '').trim();
+                showModal();
+            });
+
+            function init() {
+                const savedTag = localStorage.getItem(STORAGE_KEY);
+                const modalShown = localStorage.getItem(MODAL_SHOWN_KEY);
+
+                if (savedTag) {
+                    updateDisplay(savedTag);
+                }
+
+                if (!modalShown) {
+                    showModal();
+                }
+            }
+
+            init();
+        })();
+    </script>
+
     <script src="../games-missing.js"></script>
 </body>
 
