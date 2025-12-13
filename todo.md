@@ -1,6 +1,6 @@
 # TODOS
 
-[ ] Split the index.html file into managable chunks.
+[ ] Split the index.html file into manageable chunks.
 <br>
 [ ] Organize the file tree if it is messed up.
 <br>
