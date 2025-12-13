@@ -11,11 +11,11 @@ This is the Game Center Application, a web-based app that supports game center a
 ## Installation
 
 1. Clone the repository using the following terminal command:
-   <br>
+   </br>
    `
    git clone https://github.com/masonchenus/iGame-center.git
    `
-3. Run `npm install` to install dependencies.
+2. Run `npm install` to install dependencies.
 
 ## Usage
 
@@ -27,6 +27,7 @@ This is the Game Center Application, a web-based app that supports game center a
 Testing files are located in `src/Testing Files/`.
 
 The tests ensure all code functionality works correctly, covering:
+
 - Main application logic in `src/main.js`
 - Utility functions in `src/Shared/utils.js`
 
@@ -34,6 +35,13 @@ Run tests with:
 
 ```bash
 npm test
+```
+
+</br>
+OR:
+
+``` zsh
+npm run test
 ```
 
 ## Project Structure
@@ -46,4 +54,8 @@ npm test
 
 ## Errors
 
-****: If you encounter any errors during installation or usage, please check your Node.js version and try reinstalling dependencies. If the issue persists, feel free to submit a pull request on my "Issues.txt" file.****
+1. **: If you encounter any errors during installation or usage, please check your Node.js version and try reinstalling dependencies. If the issue persists, feel free to submit a pull request on my "Issues.txt" file. and I will accept it and ask bots to fix it.**
+</br>
+
+2. **If you have any questions about this project, please contact me. masonchenus@gmail.com**
+

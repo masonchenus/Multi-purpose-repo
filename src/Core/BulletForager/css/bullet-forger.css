@@ -1,0 +1,17 @@
+:root {
+    --bullet-forager-color: #009688;
+    --bullet-forager-background-color: rgba(255, 255, 255, .1);
+    --bullet-forager-border-radius: 3px;
+    --bullet-forager-font-size: 14px;
+    --bullet-forager-line-height: 1.7;
+    --bullet-forager-padding: 1em;
+    --bullet-forager-text-align: left;
+    --bullet-forager-width: 300px;
+    --bullet-forager-z-index: 9999;
+    --bullet-forager-opacity: 1;
+    --bullet-forager-transition-duration: .3s;
+}
+font-family {
+    font-family: 'Roboto', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto');

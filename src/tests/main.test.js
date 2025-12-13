@@ -54,7 +54,7 @@ describe('loadModeHTML', () => {
     });
 
     test('should load HTML content successfully for workshop mode', async () => {
-        const mockHtml = '<div>Workshop Content</div>';
+        const mockHtml = "<div>Workshop Content</div>";
         fetch.mockResolvedValueOnce({
             ok: true,
             text: jest.fn().mockResolvedValue(mockHtml)

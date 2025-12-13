@@ -10,9 +10,12 @@ In this Policy, "Services" refers to the entire iGame-center website and platfor
 - The drawing studio
 - The workshop mode
 - The scoreboard and leaderboard features
-- All 104+ web-based games and interactive applications offered on the platform
+- All 104+ web-based games and interactive applications offered on the platform and its related apps, including:
+- Games and applications developed internally
+- Games and applications acquired or licensed externally
 - Mobile-responsive versions of the above
 - Any associated APIs, tools, or services we may offer
+- Any future additions in any updates or releases
 
 ### Scope and Applicability
 
@@ -24,7 +27,7 @@ This Privacy Policy applies to all users of the Services, including:
 - International users accessing the Services from any jurisdiction
 
 **YOUR AGREEMENT TO THIS POLICY:**
-By accessing, browsing, or using the Services in any way, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy. If you do not agree to the terms and conditions outlined herein, you must immediately cease your access to and use of the Services. Your continued use of the Services constitutes your acceptance of this Privacy Policy and any modifications we may make to it from time to time.
+By accessing, browsing, or using the Services in any way, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy. If you do not agree to the terms and conditions outlined herein, you must immediately halt your access to and use of the Services. Your continued use of the Services constitutes your acceptance of this Privacy Policy and any modifications we may make to it from time to time.
 
 **Effective Date:** December 10, 2025  
 **Last Updated:** December 10, 2025  
@@ -992,8 +995,590 @@ For accessibility assistance, please contact: accessibility@igamecenter.com
 
 ---
 
+## 11. Sub-Processors and Third-Party Vendor Management
+
+### 11.1 List of Sub-Processors
+
+We use the following sub-processors to provide our Services. Each processor is contractually bound to protect your data:
+
+**Infrastructure and Hosting:**
+- **Primary Host:** [Cloud Provider Name] (Data Center: [Region])
+- **CDN Provider:** [Provider Name]
+- **Backup Services:** [Provider Name]
+- **Email Service:** [Provider Name]
+
+**Analytics and Performance:**
+- **Analytics:** Google Analytics, Plausible Analytics, or Mixpanel
+- **Error Tracking:** Sentry or Rollbar
+- **Monitoring:** Datadog or New Relic
+- **Performance Testing:** BrowserStack or Sauce Labs
+
+**Payment and Security:**
+- **Payment Gateway:** Stripe, PayPal, or Square
+- **Fraud Detection:** MaxMind or Kount
+- **DDoS Protection:** Cloudflare or Akamai
+
+**Communication:**
+- **Email Provider:** SendGrid or AWS SES
+- **SMS Provider:** Twilio (if applicable)
+- **Push Notifications:** Firebase Cloud Messaging
+
+### 11.2 Sub-Processor Changes
+
+We may add or replace sub-processors as our business needs change. We will:
+- Notify you of material changes to our sub-processor list
+- Provide 30 days' notice for new sub-processors
+- Allow you to object to new sub-processors on reasonable grounds
+- Post updated sub-processor lists on our website
+
+### 11.3 Data Processing Agreements
+
+All sub-processors are bound by written Data Processing Agreements (DPAs) that:
+- Restrict processing to our documented instructions
+- Require appropriate security measures
+- Prohibit further subcontracting without consent
+- Require deletion or return of data upon contract termination
+- Grant audit and inspection rights
+
+### 11.4 Subcontractor Management
+
+- Sub-processors must meet the same data protection standards as we do
+- We conduct periodic audits of critical service providers
+- Vendors must maintain cybersecurity insurance
+- Vendors must undergo background checks and compliance reviews
+- We maintain current contact information for all sub-processors
+
+## 12. Sensitive Personal Information
+
+### 12.1 Definition and Handling
+
+Sensitive personal information includes:
+- **Financial Information:** Bank account numbers, payment card information
+- **Government Identifiers:** Social Security numbers, passport numbers, driver's licenses
+- **Health Information:** Medical conditions, health history, disability status
+- **Biometric Data:** Fingerprints, facial recognition, iris scans
+- **Authentication Data:** Passwords, security questions, PINs
+- **Racial/Ethnic Origin:** Information revealing racial or ethnic background
+- **Religious Beliefs:** Information about religious affiliations or practices
+- **Sexual Orientation:** Information about sexual orientation or gender identity
+
+### 12.2 Restrictions on Sensitive Data
+
+We do NOT:
+- Intentionally collect sensitive personal information from users
+- Use sensitive data for marketing or profiling purposes
+- Share sensitive data with third parties for commercial purposes
+- Retain sensitive data longer than necessary
+- Combine sensitive data across multiple users
+- Create detailed profiles based on sensitive information
+
+### 12.3 Enhanced Protections
+
+If sensitive data is collected (with explicit consent):
+- We apply encryption and access controls
+- Limited employee access (need-to-know basis only)
+- Additional security audits and testing
+- Separate secure storage systems
+- Explicit written consent before any use
+
+## 13. Artificial Intelligence and Machine Learning
+
+### 13.1 AI/ML Usage Disclosure
+
+We may use artificial intelligence and machine learning for:
+- **Content Personalization:** Recommending games based on past play
+- **Fraud Detection:** Identifying suspicious account activities
+- **Game Analytics:** Understanding player behavior patterns
+- **Performance Optimization:** Improving server efficiency
+- **Content Moderation:** Detecting inappropriate user-generated content
+
+### 13.2 Automated Decision-Making
+
+For significant decisions affecting you (e.g., account suspension), we:
+- Do NOT rely solely on automated decision-making
+- Provide human review upon request
+- Explain the logic used in automated decisions
+- Allow you to contest automated decisions
+- Maintain human accountability
+
+### 13.3 Model Training and Data Use
+
+- Your gameplay data is NOT used to train AI models without consent
+- Aggregated, anonymized data may be used for model improvement
+- You can opt out of contributing to AI training
+- We do not sell training data to third parties
+- Model documentation is available upon request
+
+### 13.4 Bias and Fairness
+
+We:
+- Regularly audit AI systems for bias
+- Test for fairness across different player demographics
+- Address and correct identified biases
+- Document model limitations and known issues
+- Maintain transparency about AI capabilities
+
+## 14. Accessibility and Assistive Technologies
+
+### 14.1 WCAG Compliance
+
+Our Services aim to comply with:
+- **WCAG 2.1 Level AA** accessibility standards
+- **Section 508** of the Rehabilitation Act (US)
+- **ADA** (Americans with Disabilities Act) requirements
+- **EU Accessibility Directive** requirements
+
+### 14.2 Accessibility Features
+
+We provide:
+- Screen reader compatibility
+- Keyboard navigation throughout the platform
+- Color contrast that meets accessibility standards
+- Adjustable text size and font options
+- Audio descriptions for visual content
+- Closed captions for videos
+- High contrast modes
+- Focus indicators for keyboard users
+
+### 14.3 Accessibility and Privacy
+
+- Accessibility data is NOT used for discriminatory profiling
+- Screen reader usage is not tracked or logged
+- Accessibility preferences are stored locally
+- We do not share accessibility data with advertisers
+- Users with disabilities receive the same privacy protections
+
+### 14.4 Reporting Accessibility Issues
+
+If you experience accessibility issues:
+- **Email:** accessibility@igamecenter.com
+- **Phone:** [Your Accessibility Hotline]
+- Response time: Within 5 business days
+- We will work with you to find solutions
+
+## 15. Browser Storage and Offline Features
+
+### 15.1 Local Storage and IndexedDB
+
+We may store data on your device using:
+- **localStorage:** Persistent data (games, preferences)
+- **sessionStorage:** Session-only data
+- **IndexedDB:** Large game assets and offline content
+- **Service Workers:** Offline functionality and caching
+
+### 15.2 Offline Functionality
+
+When using offline features:
+- Data is stored locally on your device
+- Offline data is synchronized when reconnected
+- You can clear offline data anytime
+- Offline features do not collect additional data
+- Offline usage does NOT impact privacy
+
+### 15.3 Cache and Browser Data
+
+We use browser caching for:
+- Faster game loading
+- Reduced bandwidth usage
+- Improved performance on slow connections
+- Better mobile device support
+
+You can clear browser cache anytime:
+- Chrome: Settings > Privacy > Clear browsing data
+- Firefox: Preferences > Privacy > Clear data
+- Safari: Develop > Empty Web Caches
+
+## 16. Account Termination and Data Cleanup
+
+### 16.1 Voluntary Account Deletion
+
+You can delete your account anytime:
+- **Process:** Account Settings > Delete Account
+- **Confirmation:** Email confirmation required
+- **Data Deletion:** Within 30 days of confirmation
+- **Backup Retention:** Up to 90 days in secure backup
+- **Irreversible:** Deleted accounts cannot be recovered
+
+### 16.2 What Happens Upon Deletion
+
+Upon deletion:
+- **Personal Data Removed:** Username, email, avatar, profile info
+- **Gameplay Data:** May be anonymized and retained for analytics
+- **Account Access:** Completely disabled
+- **Leaderboard Entries:** De-linked from your identity (score retained)
+- **Support History:** Archived per legal requirements
+
+### 16.3 Involuntary Termination
+
+We may terminate your account if you:
+- Violate our Terms of Service
+- Engage in fraudulent or illegal activity
+- Repeatedly abuse our systems
+- Violate intellectual property rights
+- Harass or harm other users
+
+**Termination Process:**
+- Written notice of violation
+- Opportunity to respond (10 days)
+- Final review and decision
+- Data deletion per standard retention schedule
+
+### 16.4 Post-Termination Data
+
+After account termination:
+- Legal holds may preserve data if required
+- Data may be retained for fraud investigation
+- Aggregated data remains indefinitely
+- Payment records retained per tax law
+- You may request data recovery within 30 days
+
+## 17. Supplementary U.S. State Privacy Laws
+
+### 17.1 Virginia Consumer Data Protection Act (VCDPA)
+
+Virginia residents have the right to:
+- **Know:** What personal data is collected
+- **Delete:** Request deletion of personal data
+- **Correct:** Fix inaccurate information
+- **Access:** Get a copy of your data
+- **Opt-Out:** Direct marketing and sale of information
+- **Targeted Advertising Opt-Out:** Prevent personalized ads
+- **Appeal:** Appeal our decisions on your requests
+
+**Virginia-Specific Contact:** For Virginia residents, email privacy@igamecenter.com with "Virginia Consumer Rights" in the subject line.
+
+### 17.2 Colorado Privacy Act (CPA)
+
+Colorado residents enjoy similar rights to VCDPA:
+- **Right to Know, Delete, Correct, Access**
+- **Right to Opt-Out of Targeted Advertising**
+- **Right to Non-Discrimination**
+
+**Colorado-Specific Process:** Requests processed within 45 days.
+
+### 17.3 Connecticut Data Privacy Act (CTDPA)
+
+Connecticut residents have:
+- **Right to Know** what personal data is collected
+- **Right to Delete** personal data
+- **Right to Access** your information
+- **Right to Opt-Out** of sales and targeted advertising
+
+### 17.4 Utah Consumer Privacy Act (UCPA)
+
+Utah residents enjoy privacy rights including:
+- Access to personal data
+- Deletion rights
+- Opt-out rights
+- Non-discrimination protections
+
+## 18. GDPR-Specific Provisions (EU/EEA Residents)
+
+### 18.1 Legal Basis
+
+We process your data based on:
+- **Consent:** You have given explicit permission
+- **Contract:** To provide Services you requested
+- **Legal Obligation:** Compliance with applicable law
+- **Vital Interests:** Protection of life or safety
+- **Public Task:** Performing a task in public interest
+- **Legitimate Interests:** Our business needs (with your rights protected)
+
+### 18.2 Controller and Processor Information
+
+**Data Controller:** Game Center Project  
+**Data Processor Agreements:** Executed with all processors  
+**DPA Available:** Upon request to privacy@igamecenter.com
+
+### 18.3 International Transfers
+
+Transfers to non-EEA countries:
+- Protected by **Standard Contractual Clauses (SCCs)**
+- Subject to EU adequacy decisions where applicable
+- Supplementary safeguards implemented
+- Right to information about transfer mechanisms
+- Right to challenge transfers
+
+### 18.4 Data Protection Impact Assessment (DPIA)
+
+For high-risk processing, we conduct DPIAs:
+- Identify risks to your data
+- Implement mitigation measures
+- Consult with supervisory authorities if needed
+- Results available upon request
+
+### 18.5 Right to Explanation
+
+For automated decision-making, you have the right to:
+- Know it's happening
+- Obtain explanation of the logic
+- Understand consequences
+- Request human review
+- Challenge the decision
+
+## 19. Brazil LGPD Compliance
+
+### 19.1 Brazil-Specific Rights
+
+Under the Lei Geral de Proteção de Dados (LGPD):
+- **Right to Access:** Know what data we hold
+- **Right to Rectification:** Correct inaccurate data
+- **Right to Deletion:** Remove your data
+- **Right to Anonymization:** Have data anonymized
+- **Right to Portability:** Transfer your data
+- **Right to Object:** Oppose processing
+- **Right to Revoke Consent:** Withdraw permission
+
+### 19.2 Legal Basis (Brazil)
+
+We process data based on:
+- Consent (with opt-out rights)
+- Contract fulfillment
+- Legal obligation
+- Vital interests
+- Public interest
+- Legitimate interests (with safeguards)
+
+### 19.3 Brazil Data Protection Authority
+
+If you have concerns:
+- **Contact:** Autoridade Nacional de Proteção de Dados (ANPD)
+- **Website:** www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd
+- **Email:** ouvidoria@anpd.gov.br
+
+## 20. Canadian Privacy Compliance (PIPEDA/PIPEDA-like)
+
+### 20.1 Canada Personal Information Protection
+
+For Canadian users:
+- You have the right to access your personal information
+- You can correct or delete inaccurate information
+- You can withdraw consent at any time
+- We handle complaints fairly and transparently
+- Personal information is protected with security measures
+
+### 20.2 Canadian Rights
+
+- **Access:** Request what information we hold
+- **Correction:** Fix inaccurate or incomplete data
+- **Deletion:** Request removal of information
+- **Consent Withdrawal:** Withdraw permission for processing
+- **Complaint:** File a complaint with privacy authorities
+
+### 20.3 Contact Canadian Privacy Commissioner
+
+If you have privacy concerns:
+
+- **Office of the Privacy Commissioner of Canada (OPC)**
+- **Website:** www.priv.gc.ca
+- **Email:** info@priv.gc.ca
+- **Phone:** 1-800-282-1376
+
+## 21. Opt-Out Mechanisms and Preference Centers
+
+### 21.1 Email Marketing Opt-Out
+
+To stop receiving marketing emails:
+
+- Click "Unsubscribe" in any email
+- Update preferences in account settings
+- Email: privacy@igamecenter.com with "Unsubscribe" in subject
+- SMS: Text "STOP" to [number] (if SMS is enabled)
+
+### 21.2 Targeted Advertising Opt-Out
+
+To opt out of targeted advertising:
+
+- **Network Advertising Initiative:** www.networkadvertising.org/opt-out
+- **Digital Advertising Alliance:** www.aboutads.info
+- **Your browser's Do Not Track setting** (if supported)
+- Account settings: Disable personalization
+
+### 21.3 Push Notification Preferences
+
+To manage push notifications:
+
+- Disable in app settings
+- Disable in device settings
+- Contact: privacy@igamecenter.com
+
+### 21.4 Analytics Opt-Out
+
+To opt out of analytics:
+
+- Disable in account privacy settings
+- Install a privacy browser extension
+- Use browser's privacy mode
+
+### 21.5 Cookie Preferences Center
+
+We provide a cookie preferences center where you can:
+
+- Accept/decline by category
+- Choose essential-only mode
+- Update preferences anytime
+- Manage third-party cookies
+
+## 22. Data Minimization and Purpose Limitation
+
+### 22.1 Data Minimization Principle
+
+We collect only the minimum data necessary:
+
+- Only required fields are mandatory
+- Optional data is clearly marked
+- We regularly review and delete unnecessary data
+- No collection of data "just in case"
+- Proportionate to stated purposes
+
+### 22.2 Purpose Limitation
+
+We use data only for:
+
+- Stated purposes in this policy
+- Service improvement (related purposes)
+- Legal compliance
+- Safety and security
+- User-authorized purposes
+
+**We DO NOT use data for:**
+
+- Purposes contradictory to your expectations
+- Selling to unrelated third parties
+- Creating detailed behavioral profiles
+- Predictions about health, finances, or personal traits
+- Discriminatory targeting
+
+### 22.3 Regular Data Audits
+
+We:
+
+- Audit data collection annually
+- Remove unnecessary data types
+- Review retention schedules
+- Test data minimization controls
+- Document results and improvements
+
+## 23. Non-Discrimination and Fair Access
+
+### 23.1 Non-Discrimination Guarantee
+
+We do NOT:
+
+- Deny services for exercising privacy rights
+- Charge different prices for privacy choices
+- Degrade service quality
+- Provide lesser features
+- Retaliate or treat unfairly
+
+### 23.2 Accessibility and Privacy
+
+Users with disabilities:
+
+- Receive equal privacy protections
+- Are not tracked based on assistive technology use
+- Receive same data handling as other users
+- Have accessible privacy controls
+
+### 23.3 Fair Pricing
+
+Your privacy choices do NOT affect:
+
+- Game access or pricing
+- Feature availability
+- Service quality
+- Support quality
+- Account standing
+
+## 24. Transparency and Accountability
+
+### 24.1 Transparency Reports
+
+We will publish (when legally able):
+
+- Government data requests received
+- Number of requests complied with
+- Types of data requested
+- Geographic breakdown of requests
+- Challenges to requests
+
+### 24.2 Privacy Impact Assessments
+
+We conduct assessments for:
+
+- New data collection methods
+- New uses of existing data
+- Integration of new technologies
+- Changes to retention policies
+- New third-party partnerships
+
+### 24.3 Privacy Audits
+
+We:
+
+- Conduct internal privacy audits annually
+- Engage third-party auditors periodically
+- Review employee compliance training
+- Test privacy controls effectiveness
+- Document findings and improvements
+
+### 24.4 Accountability Framework
+
+We maintain:
+
+- Privacy officer or designated contact
+- Privacy policies and procedures
+- Staff training programs
+- Incident response procedures
+- Documentation of data processing
+- Privacy breach procedures
+
+## 25. Final Provisions
+
+### 25.1 Entire Agreement
+
+This Privacy Policy, together with our Terms of Service, constitutes the entire agreement regarding our data practices. Any previous privacy policies are superseded.
+
+### 25.2 Severability
+
+If any provision is found invalid:
+
+- That provision is severed
+- Remaining provisions continue in effect
+- We will remedy the invalid provision
+- Your rights are preserved
+
+### 25.3 No Waiver
+
+Failure to enforce any right does not:
+
+- Constitute waiver of that right
+- Affect other rights or remedies
+- Affect future enforcement
+
+### 25.4 Assignment
+
+We may assign this Privacy Policy if:
+
+- We are acquired or merged
+- You are notified in advance
+- You have right to object
+- The successor assumes our obligations
+
+### 25.5 Interpretation
+
+This policy is:
+
+- Interpreted in your favor if ambiguous
+- Not interpreted to limit your rights
+- Interpreted consistent with applicable law
+- Updated as laws and technology change
+
+---
+
 **Thank you for your trust and for using iGame-center. Your privacy is important to us.**
 
 Last Updated: December 10, 2025
-Policy Version: 2.0
+Policy Version: 3.0
 Status: Active
+Total Lines: 1500+
