@@ -305,6 +305,68 @@ class BulletForger {
     this.createParameterPanel();
     this.createCodeEditor();
     this.createBlockCoder();
+    this.createMegaGameMenu();
+  }
+
+  createMegaGameMenu() {
+    const menu = document.createElement('div');
+    menu.id = 'mega-game-menu';
+    menu.style.display = 'none';
+    menu.style.position = 'fixed';
+    menu.style.top = '10px';
+    menu.style.right = '10px';
+    menu.style.backgroundColor = 'white';
+    menu.style.border = '1px solid black';
+    menu.style.padding = '10px';
+    menu.style.zIndex = '10001';
+
+    const button = document.createElement('button');
+    button.textContent = 'Init Mega Game';
+    button.addEventListener('click', () => this.initMegaGame());
+    menu.appendChild(button);
+
+    document.body.appendChild(menu);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.shiftKey && event.key === 'P') {
+            const menu = document.getElementById('mega-game-menu');
+            const isHidden = menu.style.display === 'none';
+            menu.style.display = isHidden ? 'block' : 'none';
+        }
+    });
+  }
+
+  initMegaGame() {
+    let bulletExport = document.getElementById('bullet-export-display');
+    if (!bulletExport) {
+        bulletExport = document.createElement('div');
+        bulletExport.id = 'bullet-export-display';
+        bulletExport.style.position = 'fixed';
+        bulletExport.style.bottom = '10px';
+        bulletExport.style.left = '10px';
+        bulletExport.style.backgroundColor = 'rgba(0,0,0,0.7)';
+        bulletExport.style.color = 'white';
+        bulletExport.style.padding = '10px';
+        bulletExport.style.border = '1px solid white';
+        bulletExport.style.borderRadius = '5px';
+        bulletExport.style.zIndex = '10000';
+        document.body.appendChild(bulletExport);
+    }
+
+    const bulletData = this.exportBulletToGame();
+    bulletExport.innerHTML = `<h3>Exported Bullet:</h3><pre>${bulletData}</pre>`;
+
+    // Create a visual representation of the bullet
+    const bulletVisual = document.createElement('div');
+    const bullet = JSON.parse(bulletData);
+    bulletVisual.style.width = bullet.bulletSize.w * 5 + 'px';
+    bulletVisual.style.height = bullet.bulletSize.h * 5 + 'px';
+    bulletVisual.style.backgroundColor = bullet.color;
+    bulletVisual.style.border = '2px solid white';
+    bulletVisual.style.margin = '10px 0';
+    bulletExport.appendChild(bulletVisual);
+
+    alert('Mega Game Initialized and bullet exported!');
   }
 
   createMainWorkflow() {
@@ -501,8 +563,7 @@ class BulletForger {
         }
         if (paramPart) {
           this.currentBullet[param][paramPart] = value;
-        }
-        else {
+        } else {
           this.currentBullet[param] = value;
         }
         this.updatePreview();

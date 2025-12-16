@@ -336,4 +336,4 @@ const weaponPresets = {
         "randomStatic": () => Math.random() > 0.8,
         "randomScale": () => Math.random() * 2 + 0.6
     }
-}
+};
