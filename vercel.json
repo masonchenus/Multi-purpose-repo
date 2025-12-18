@@ -2,8 +2,6 @@
   "version": 2,
   "name": "Game Center",
   "buildCommand": "npm run build",
-  "framework": "static",
-  "public": true,
   "env": {},
   "build": {
     "env": {}
