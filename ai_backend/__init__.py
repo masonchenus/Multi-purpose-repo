@@ -4,6 +4,15 @@ import json
 import logging
 
 # -----------------------
+# Import and initialize all model providers
+# -----------------------
+from .models.chatgpt_model import ChatGPTModel
+from .models.perplexity_model import PerplexityModel
+from .models.gemini_model import GeminiModel
+from .models.deepseek_model import DeepseekModel
+from .models.grok_model import GrokModel
+
+# -----------------------
 # Logging setup
 # -----------------------
 logging.basicConfig(level=logging.INFO)
