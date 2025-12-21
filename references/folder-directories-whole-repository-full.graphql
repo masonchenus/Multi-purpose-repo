@@ -28158,4 +28158,21 @@ src/
 │   ├──utils.test.js
 ├──main.js
 tmp/
-│├──
+│   ├──folder-directories-whole-repository-full.graphql
+│   ├──generated_full_tree.graphql
+.babelrc
+.browserslistrc
+.editorconfig
+.eslintrc.json
+.htaccess
+.nojekyll
+.prettierrc
+.issues.txt
+LICENSE
+netlify.toml
+package-lock.json
+package.json
+Privacy-Policy.md
+README.md
+server.log
+vercel.json
