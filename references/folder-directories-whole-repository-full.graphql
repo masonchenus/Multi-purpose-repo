@@ -1,8 +1,3 @@
-.github/
-└──workflows/
-│	├──codeql.yaml
-│	├──jekyll-gh-pages.yaml
-│	├──static.yaml
 .venv/
 ├── bin
 │   ├── Activate.ps1
@@ -3240,104 +3235,144 @@
 │           └── typing_extensions.py
 ├── .gitignore
 └── pyvenv.cfg
-.vscode/
-├──iGame-center/
-├──launch.json
-├──settings.json
-├──tasks.json
-.zencoder/
-├──rules/
-│  └──repo.md
-├──workflows/
-├──Agent-Instructions.md
-.zenflow/
-├──workflows
+
+
 ai_backend/
-├──ai_models/
-│   ├──chatgpt_model.py
-│	├──claude_model.py
-│	├──coherence_model.py
-│	├──gemini_model.py
-│	└──grok_model.py
-├──logs/
-│   ├──billing.log
-│	├──errors.log
-│	├──usage.log
-├──modules/
-│	├──agent_module.py
-│	├──brainstorming_module.py
-│	├──cheat_sheet_module.py
-│	├──checklist_module.py 
-│	├──code_review_module.py 
-│	├──codegen_module.py 
-│	├──coding_challenge_module.py 
-│	├──comparison_module.py
-│	├──creativity_module.py 
-│	├──data_analysis_module.py 
-│	├──debug_module.py
-│	├──design_module.py 
-│	├──diagram_module.py 
-│	├──dialouge_module.py 
-│	├──documentation_module.py 
-│	├──explain_module.py 
-│	├──fact_check_module.py
-│	├──feedback_module.py
-│	├──game_generator.py
-│	├──game_tips_module.py
-│	├──generator_module.py
-│	├──health_module.py
-│	├──helper_module.py 
-│	├──joke_module.py
-│	├──logic_puzzle_module.py
-│	├──lyrics_module.py
-│	├──math_explain_module.py
-│	├──math_solver.py
-│	├──naming_module.py
-│	├──optimization_module.py
-│	├──outline_module.py
-│	├──planning_module.py
-│	├──poem_module.py
-│	├──productivity_module.py
-│	├──prompt_idea_module.py
-│	├──quiz_module.py
-│	├──ranking_module.py
-│	├──recommendation_module.py
-│	├──research_module.py
-│	├──riddle_module.py
-│	├──simulation_module.py
-│	├──slides_generator.py
-│	├──stats_analyzer_module.py
-│	├──story_module.py
-│	├──summarizer_module.py
-│	├──test_creator_module.py
-│	├──tester_module.py
-│	├──translator_module.py
-│	├──trivia_module.py
-│	├──visualization_module.py
-├──__init__.py
-├──logger.py
-└──orchestration.py
+├── ai_models
+│   ├── chatgpt_model.py
+│   ├── claude_model.py
+│   ├── coherence_model.py
+│   ├── gemini_model.py
+│   └── grok_model.py
+├── logs
+│   ├── billing.log
+│   ├── errors.log
+│   └── usage.log
+├── modules
+│   ├── agent_module.py
+│   ├── brainstorming_module.py
+│   ├── cheat_sheet_module.py
+│   ├── checklist_module.py
+│   ├── code_review_module.py
+│   ├── codegen_module.py
+│   ├── coding_challenge_module.py
+│   ├── comparison_module.py
+│   ├── creativity_module.py
+│   ├── data_analysis_module.py
+│   ├── debug_module.py
+│   ├── design_module.py
+│   ├── diagram_module.py
+│   ├── dialouge_module.py
+│   ├── documentation_module.py
+│   ├── explain_module.py
+│   ├── fact_check_module.py
+│   ├── feedback_module.py
+│   ├── game_generator.py
+│   ├── game_tips_module.py
+│   ├── generator_module.py
+│   ├── health_module.py
+│   ├── helper_module.py
+│   ├── joke_module.py
+│   ├── logic_puzzle_module.py
+│   ├── lyrics_module.py
+│   ├── math_explain_module.py
+│   ├── math_solver.py
+│   ├── naming_module.py
+│   ├── optimization_module.py
+│   ├── outline_module.py
+│   ├── planning_module.py
+│   ├── poem_module.py
+│   ├── productivity_module.py
+│   ├── prompt_idea_module.py
+│   ├── quiz_module.py
+│   ├── ranking_module.py
+│   ├── recommendation_module.py
+│   ├── research_module.py
+│   ├── riddle_module.py
+│   ├── simulation_module.py
+│   ├── slides_generator.py
+│   ├── stats_analyzer_module.py
+│   ├── story_module.py
+│   ├── summarizer_module.py
+│   ├── test_creator_module.py
+│   ├── tester_module.py
+│   ├── translator_module.py
+│   ├── trivia_module.py
+│   └── visualization_module.py
+├── __init__.py
+├── logger.py
+└── orchestration.py
+
+
 Assets/
-├──images/
-│   ├──favicon.ico
-│   ├──logo.png
-├──Test Images/
+├── Test Images 
+└── images
+    ├── favicon.ico
+    └── logo.png
+
+
 docs/
-├──public/
-│   ├──robots.txt
-│   ├──sitemap.xml
+├── public
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── ACCESSIBILITY.md
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── DEPLOYMENT.md
-├── developer-guide.md
-├── gamecenter-api.md
-├── module-map.md
 ├── OPTIMIZATIONS.md
-├── Overview.md 
-├── PERFORMANCE.md 
+├── Overview.md
+├── PERFORMANCE.md
 ├── SECURITY.md
 ├── TESTING.md
+├── developer-guide.md
+├── gamecenter-api.md
+└── module-map.md
+
+
+scripts/
+├── build.sh
+└── find_missing_games.py
+
+
+src/
+├── AI-agent
+│   └── main.py
+├── config
+│   ├── AppSettings.json
+│   ├── engine.json
+│   └── player.json
+├── core
+│   ├── BulletForager
+│   │   ├── css
+│   │   │   └── bullet-forger.css
+│   │   ├── js
+│   │   │   ├── bullet-forger.js
+│   │   │   └── weapon-presets.js
+│   │   └── mega-game-bullet-forger.html
+│   ├── calculator.html
+│   ├── index.html
+│   ├── scoreboard.html
+│   └── workshop.html
+├── games
+│   └── generated.js
+├── pwa
+│   ├── manifest.json
+│   └── sw.js
+├── shared
+│   ├── engine.js
+│   ├── player.js
+│   └── utils.js
+├── tests
+│   ├── enemy-variety.spec.cjs
+│   ├── main.test.js
+│   └── utils.test.js
+└── main.js
+
+
+tmp/
+├── folder-directories-whole-repository-full.graphql
+└── generated_full_tree.graphql
+
 
 node_modules/
 ├── .bin
@@ -28117,62 +28152,3 @@ node_modules/
 │   ├── index.js
 │   └── package.json
 └── .package-lock.json
-references/
-├──folder-directories-whole-repository-full.graphql
-├──python-ai-multipurpose-ai-file-structure.graphql
-├──venv_tree.graphql
-scripts/
-├──build.sh
-├──find_missing_games.py
-src/
-├──AI-agent/
-│   ├──main.py
-├──config/
-│   ├──AppSettings.json
-│   ├──engine.json
-│   ├──player.json
-├──core/
-│   ├──BulletForager
-│       ├──css/
-│           ├──bullet-forger.css
-│       ├──js/
-│           ├──bullet-forger.js
-│           ├──weapon-presets.js
-│       ├──mega-game-bullet-forger.html
-│   ├──calculator.html
-│   ├──index.html
-│   ├──scoreboard.html
-│   ├──workshop.html
-├──games/
-│   ├──generated.js
-├──pwa
-│   ├──manifest.json
-│   ├──sw.js
-├──shared/
-│   ├──engine.js
-│   ├──player.js
-│   ├──utils.js
-├──tests/
-│   ├──enemy-variety.spec.cjs
-│   ├──main.test.js
-│   ├──utils.test.js
-├──main.js
-tmp/
-│   ├──folder-directories-whole-repository-full.graphql
-│   ├──generated_full_tree.graphql
-.babelrc
-.browserslistrc
-.editorconfig
-.eslintrc.json
-.htaccess
-.nojekyll
-.prettierrc
-.issues.txt
-LICENSE
-netlify.toml
-package-lock.json
-package.json
-Privacy-Policy.md
-README.md
-server.log
-vercel.json
