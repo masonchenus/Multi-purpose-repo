@@ -12,7 +12,7 @@ ai_backend/
 │   └── ...  # more modes up to 50+
 ├── models/
 │   ├── chatgpt_model.py
-│   ├── perplexity_model.py
+│   ├── claude_model.py
 │   ├── gemini_model.py
 │   ├── deepseek_model.py
 │   └── grok_model.py

@@ -1,3 +1,9 @@
+from importlib import import_module
+
+def run_mode(mode_name, capability, input_data, model_name, user_id, session_id):
+    module = import_module(f"ai_backend.modules.{mode_name}")
+    # Now this will work without any ModuleNotFoundError
+
 # ai_backend/orchestrator.py
 import os
 import json

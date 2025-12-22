@@ -1,4 +1,4 @@
-from ai_models import models
+from ai_backend.ai_models import models
 PRIVILEGES = ["generate_game"]
 
 

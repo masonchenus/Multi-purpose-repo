@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus AI</title>
+    <script src="src/core/main.js"></script>
+    <style>
+        body {
+            background-color: #000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Inputs */
+        textarea,
+        select {
+            width: 100%;
+            background: #111;
+            color: #fff;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 6px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Button */
+        button {
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #187bcd;
+        }
+
+        /* Chat history */
+        .chat-history {
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid #222;
+            border-radius: 8px;
+            background: #0b0b0b;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Chat bubbles */
+        .message {
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            line-height: 1.4;
+        }
+
+        .message.user {
+            background: #1a1a1a;
+            text-align: right;
+        }
+
+        .message.ai {
+            background: #111827;
+            border-left: 3px solid #1e90ff;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Nexus AI</h1>
+    </div>
+</body>
+
+</html>

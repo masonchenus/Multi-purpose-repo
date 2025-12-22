@@ -71,3 +71,7 @@ dist-info/
 tmp/
 temp/
 *.pid
+
+# Other
+*.venv/
+server.log
