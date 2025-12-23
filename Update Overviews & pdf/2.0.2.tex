@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+
+\title{Game Center Update 2.0.2}
+\author{Mason}
+\date{December 24, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Update 2.0.2 — Database Persistence}
+
+\subsection*{Summary}
+Version 2.0.2 introduces permanent score storage with database integration. This release marks the transition from in-memory storage to persistent data management.
+
+\subsection*{New Features}
+\begin{itemize}
+  \item PostgreSQL database integration
+  \item Persistent score storage across server restarts
+  \item User account system with authentication
+  \item Score history tracking
+\end{itemize}
+
+\subsection*{Technical Changes}
+\begin{itemize}
+  \item Migrated from in-memory arrays to PostgreSQL
+  \item Implemented JWT authentication
+  \item Added database schema management
+  \item Improved API response times with indexing
+\end{itemize}
+
+\subsection*{Improvements}
+\begin{itemize}
+  \item Data recovery from unexpected shutdowns
+  \item Better user session management
+  \item Enhanced security with password hashing
+\end{itemize}
+
+\end{document}

@@ -9,6 +9,9 @@ md_files = {
     "2.0.0": "2.0.0.md",
     "2.0.1": "2.0.1.md",
     "2.0.1.1": "2.0.1.1.md",
+    "2.0.2": "2.0.2.md",
+    "2.0.3": "2.0.3.md",
+    "2.0.4": "2.0.4.md",
 }
 
 for version, md_file in md_files.items():
@@ -18,8 +21,8 @@ for version, md_file in md_files.items():
         
         pdf = FPDF(format='Letter')
         pdf.add_page()
-        pdf.set_font("Helvetica", size=9)
-        pdf.set_margins(10, 10, 10)
+        pdf.set_font("Helvetica", size=8)
+        pdf.set_margins(8, 8, 8)
         
         in_list = False
         for line in lines:
@@ -30,39 +33,31 @@ for version, md_file in md_files.items():
                 line = line.replace(char, '')
             
             if line.startswith('# '):
-                pdf.set_font("Helvetica", "B", size=13)
-                pdf.cell(0, 6, line[2:], new_y='NEXT')
-                pdf.set_font("Helvetica", size=8)
-                pdf.ln(1)
+                pdf.set_font("Helvetica", "B", size=11)
+                pdf.cell(0, 4, line[2:], new_y='NEXT')
+                pdf.set_font("Helvetica", size=7.5)
+                pdf.ln(0.3)
             elif line.startswith('## '):
-                if in_list:
-                    pdf.ln(1)
-                    in_list = False
-                pdf.set_font("Helvetica", "B", size=10)
-                pdf.cell(0, 5, line[3:], new_y='NEXT')
-                pdf.set_font("Helvetica", size=8)
+                pdf.set_font("Helvetica", "B", size=9)
+                pdf.cell(0, 3, line[3:], new_y='NEXT')
+                pdf.set_font("Helvetica", size=7.5)
+                pdf.ln(0.2)
             elif line.startswith('- ') or line.startswith('  - '):
                 text = line.lstrip('- ').strip()
                 if text:
-                    if not in_list:
-                        in_list = True
-                    pdf.cell(3)
-                    pdf.cell(0, 3, '* ' + text, new_y='NEXT')
+                    pdf.cell(2)
+                    pdf.cell(0, 2.5, '* ' + text, new_y='NEXT')
             elif line.startswith('**'):
-                pdf.set_font("Helvetica", "B", size=8)
-                pdf.cell(0, 3, line.replace('**', ''), new_y='NEXT')
-                pdf.set_font("Helvetica", size=8)
+                pdf.set_font("Helvetica", "B", size=7.5)
+                pdf.cell(0, 2.5, line.replace('**', ''), new_y='NEXT')
+                pdf.set_font("Helvetica", size=7.5)
             elif line.strip():
-                if in_list:
-                    pdf.ln(0.5)
-                    in_list = False
                 try:
-                    pdf.multi_cell(0, 3, line.strip())
+                    pdf.multi_cell(0, 2.5, line.strip())
                 except Exception:
                     # Skip lines that can't be rendered
                     pass
-            else:
-                pdf.ln(0.5)
+            # Skip blank lines completely
         
         pdf_file = f"{version}.pdf"
         pdf.output(pdf_file)
