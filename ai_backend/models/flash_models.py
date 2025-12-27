@@ -67,3 +67,40 @@ class UltraFlashModel(BaseFlash):
         """Ultra Flash uses optimized tokenization for speed."""
         # Ultra Flash: minimal tokenization for speed
         return text.split()
+class FlashCoder(BaseFlashCoder):
+    def __init__(self):
+        super().__init__("flash", "python")
+
+    def code(self, code_block: str) -> str:
+        
+        return code_block
+
+
+class ProFlashCoder(BaseFlashCoder):
+    def __init__(self):
+        super().__init__("pro-flash", "python")
+
+    def code(self, code_block: str) -> str:
+        # Implement the code generation logic for the "pro-flash" model here
+        # You can perform any necessary processing or transformations on the code block
+        return code_block
+
+
+class UltraCoder(BaseFlashCoder):
+    def __init__(self):
+        super().__init__("ultra", "python")
+
+    def code(self, code_block: str) -> str:
+        # Implement the code generation logic for the "ultra" model here
+        # You can perform any necessary processing or transformations on the code block
+        return code_block
+
+
+class UltraFlashCoder(BaseFlashCoder):
+    def __init__(self):
+        super().__init__("ultra-flash", "python")
+
+    def code(self, code_block: str) -> str:
+        # Implement the code generation logic for the "ultra-flash" model here
+        # You can perform any necessary processing or transformations on the code block
+        return code_block
